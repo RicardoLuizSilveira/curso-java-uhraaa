@@ -2,7 +2,7 @@ package alura.java03.banco.conta;
 
 import alura.java03.banco.conta.exceptions.ValorInvalidoException;
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta>{
 
 	private String nome;
 	private int numero;
@@ -13,7 +13,7 @@ public abstract class Conta {
 	}
 
 	public void depositar(double valor) throws ValorInvalidoException {
-		if(valor < 0) {
+		if (valor < 0) {
 			throw new ValorInvalidoException(valor);
 		} else {
 			this.saldo += valor;
@@ -21,21 +21,19 @@ public abstract class Conta {
 	}
 
 	public void sacar(double valor) {
-		
+
 		if (saldo >= valor) {
 			saldo -= valor;
 		}
 
 	}
-	
-	public abstract void atualiza (double taxa);
-	
+
+	public abstract void atualiza(double taxa);
+
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	
-	
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -47,11 +45,17 @@ public abstract class Conta {
 	public int getNumero() {
 		return numero;
 	}
-	
+
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 	
+	@Override
+	public int compareTo(Conta outra) {
+
+		return this.getNumero() - outra.getNumero();
+	}
+
 	@Override
 	public String toString() {
 		return "O saldo da conta é: " + saldo;
@@ -71,6 +75,8 @@ public abstract class Conta {
 		return true;
 	}
 	
-	
+	public String getReference() {
+		return getClass().getName() + "@" + Integer.toHexString(hashCode());
+	}
 
 }
