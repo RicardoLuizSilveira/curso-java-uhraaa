@@ -7,6 +7,15 @@ public abstract class Conta implements Comparable<Conta>{
 	private String nome;
 	private int numero;
 	protected double saldo = 0.0;
+	
+	public Conta (){
+		
+	}
+	
+	public Conta(String nome, int numero) {
+		this.setNome(nome);
+		this.setNumero(numero);
+	}
 
 	public double pegarSaldo() {
 		return saldo;
@@ -62,6 +71,14 @@ public abstract class Conta implements Comparable<Conta>{
 	}
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numero;
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -70,13 +87,11 @@ public abstract class Conta implements Comparable<Conta>{
 		if (getClass() != obj.getClass())
 			return false;
 		Conta other = (Conta) obj;
-		if (numero != other.numero || !nome.equals(other.nome))
+		if (numero != other.numero)
 			return false;
 		return true;
 	}
+
 	
-	public String getReference() {
-		return getClass().getName() + "@" + Integer.toHexString(hashCode());
-	}
 
 }

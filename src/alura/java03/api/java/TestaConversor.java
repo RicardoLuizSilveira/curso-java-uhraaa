@@ -1,8 +1,6 @@
 package alura.java03.api.java;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 public class TestaConversor {
 
@@ -12,7 +10,7 @@ public class TestaConversor {
 		
 		System.out.println(valor);
 		
-		InputStream is = new FileInputStream("file");
+//		InputStream is = new FileInputStream("file");
 		
 	}
 

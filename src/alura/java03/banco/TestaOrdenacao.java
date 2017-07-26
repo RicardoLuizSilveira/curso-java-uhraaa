@@ -11,8 +11,6 @@ public class TestaOrdenacao {
 
 	public static void main(String[] args) {
 		
-		Object o;
-
 		List<ContaPoupanca> contas = new LinkedList<ContaPoupanca>();
 		
 		Random random = new Random();
@@ -27,11 +25,12 @@ public class TestaOrdenacao {
 
 		}
 
-		Collections.sort(contas);
-		System.out.println(contas.toString());
+		Collections.reverse(contas);
+		
+//		System.out.println(contas.toString());
 
 		for (ContaPoupanca conta : contas) {
-			System.out.println(conta + " : ");
+			System.out.println(conta.getNome() + " : " + conta.pegarSaldo());
 //			System.out.println(conta.getReference());
 		}
 

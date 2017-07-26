@@ -8,6 +8,14 @@ import alura.java03.banco.Tributavel;
  *
  */
 public class ContaCorrente extends Conta implements Tributavel{
+	
+	public ContaCorrente (){
+		
+	}
+
+	public ContaCorrente(String nome, int numero) {
+		super(nome, numero);
+	}
 
 	/**
 	 * @param taxa de rendimento

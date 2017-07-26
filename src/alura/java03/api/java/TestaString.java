@@ -21,9 +21,9 @@ public class TestaString {
 		saida = System.out;
 		saida.println("PrintStream");
 		
-//		imprimePalavraPorLinha("Matera");
-//		
-//		imprimePalavraAoContrario("Socorram-me, subi no ônibus em Marrocos");
+		imprimePalavraPorLinha("Matera");
+		
+		imprimePalavraAoContrario("Socorram-me, subi no ônibus em Marrocos");
 //		System.out.println();
 //		imprimePalavraAoContrario("anotaram a data da maratona");
 		System.out.println();

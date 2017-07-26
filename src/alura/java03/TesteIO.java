@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.util.Scanner;
 
 public class TesteIO {
 
@@ -18,7 +17,7 @@ public class TesteIO {
 		InputStream is = System.in;
 		BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		
-		Scanner sc = new Scanner(is);
+//		Scanner sc = new Scanner(is);
 		
 		
 		OutputStream os = new FileOutputStream("./resources/filesIO/output");
